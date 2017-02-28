@@ -29,4 +29,12 @@ export class RecipeService {
   getRecipes(): Recipe[] {
     return this.recipes;
   };
+
+  getRecipe(id: number): Recipe {
+    return this.recipes[id];
+  }
+
+  removeRecipe(recipe: Recipe) {
+    this.recipes.splice(this.recipes.indexOf(recipe), 1);
+  }
 }
