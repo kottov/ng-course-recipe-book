@@ -10,11 +10,20 @@ import { ShoppingListService } from './shopping-list.service';
 })
 export class ShoppingListComponent implements OnInit {
   items: Ingredient[] = [];
+  item: Ingredient;
 
   constructor(private sls: ShoppingListService) { }
 
   ngOnInit() {
     this.items = this.sls.getIgredients();
+  }
+
+  onSelect(item: Ingredient) {
+    this.item = item;
+  }
+
+  onCleared() {
+    this.item = null;
   }
 
 }
